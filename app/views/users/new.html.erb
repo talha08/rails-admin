@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Rails | Sign Up </title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+  <!-- Toastr style -->
+  <link href="css/plugins/bootstrapSocial/bootstrap-social.css" rel="stylesheet">
+
+  <link href="css/animate.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+<body class="gray-bg">
+<div class="loginColumns animated fadeInDown">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="font-bold">Welcome to Rails Admin Panel</h2>
+      <p>
+        Perfectly designed and precisely prepared admin theme with over 50 pages with extra new web app views.
+      </p>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+      </p>
+      <p>
+        When an unknown printer took a galley of type and scrambled it to make a type specimen book.
+      </p>
+      <p>
+        <small>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</small>
+      </p>
+    </div>
+    <div class="col-md-6">
+      <div class="ibox-content">
+        <div class="panel-heading">
+          <h2 class="text-center m-t-10"><strong>Sign Up</strong> </h2>
+        </div>
+              <%= form_for :user, url: '/users' do |f| %>
+                <div class="form-group ">
+                  <%= f.text_field :first_name, :placeholder => 'First Name', :class => 'form-control' %>
+                </div>
+                <div class="form-group ">
+                  <%= f.text_field :last_name, :placeholder => 'Last Name', :class => 'form-control' %>
+                </div>
+                <div class="form-group ">
+                  <%= f.text_field :email, :placeholder => 'Email', :class => 'form-control' %>
+                </div>
+                  <div class="form-group ">
+                  <%= f.password_field :password, :placeholder => 'Password' , :class => 'form-control' %>
+                  </div>
+                  <%= f.submit "Sign up", :class => "btn btn-primary block full-width m-b" %>
+              <% end %>
+
+        <div class="ibox-content">
+          <h4 class="text-center"><b> OR</b></h4>
+          <a href="{!! route('login/fb') !!}" class="btn btn-block btn-social btn-facebook" >
+            <span class="fa fa-facebook"></span> Sign up with Facebook
+          </a>
+
+          <a href="{!! route('login/gp') !!}" class="btn btn-block btn-social btn-google" >
+            <span class="fa fa-google"></span> Sign up with Google
+          </a>
+        </div>
+
+
+
+
+        <p class="text-muted text-center">
+          <small>Already have an account?</small>
+        </p>
+        <%= link_to "Login", 'login', :class => 'btn btn-sm btn-white btn-block' %> <br><br>
+
+      </div>
+    </div>
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="col-md-6">
+      Copyright &copy; Rails Admin Panel
+    </div>
+    <div class="col-md-6 text-right">
+      <small> &copy; 2016 - <%= Date.today.year %></small>
+    </div>
+  </div>
+</div>
+
+
+<!-- End of Modal -->
+
+</body>
+</html>

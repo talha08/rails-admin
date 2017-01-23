@@ -1,0 +1,5 @@
+Updating installed gems
+Updating actionmailer
+Updating actionpack
+Updating actionview
+Terminate batch job (Y/N)? 

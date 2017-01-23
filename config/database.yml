@@ -1,0 +1,27 @@
+development:
+   adapter: mysql2
+   database: rails_blog
+   username: root
+   password: talha012
+   host: localhost
+   socket: /tmp/mysql.sock
+
+test:
+   adapter: mysql2
+   database: rails_blog
+   username: root
+   password: talha012
+   host: localhost
+   socket: /tmp/mysql.sock
+
+production:
+   adapter: mysql2
+   database: rails_blog
+   username: root
+   password: talha012
+   host: localhost
+   socket: /tmp/mysql.sock
+
+
+
+
