@@ -17,9 +17,9 @@
   </head>
 
   <% if current_user %>
-      <%= render 'layouts/admin' %>
+      <%= render partial: 'layouts/admin' %>
   <% else %>
-      <%= render 'layouts/normal' %>
+      <%= render partial: 'layouts/normal' %>
   <% end %>
 
 

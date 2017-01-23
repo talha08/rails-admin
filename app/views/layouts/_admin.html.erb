@@ -2,11 +2,11 @@
 
 <div id="wrapper">
 
-  <%= render 'includes/sideBar' %>
+  <%= render partial: 'includes/sideBar' %>
 
   <div id="page-wrapper" class="gray-bg dashbard-1">
 
-    <%= render 'includes/topMenu' %>
+    <%= render partial: 'includes/topMenu' %>
 
     <div class="row wrapper border-bottom white-bg page-heading">
       <div class="col-lg-12">
@@ -16,11 +16,11 @@
 
     <%= yield %>
 
-    <%= render 'includes/footer' %>
+    <%= render partial:  'includes/footer' %>
 
   </div>
 </div>
 
-<%= render 'includes/js' %>
+<%= render partial: 'includes/js' %>
 
 </body>
