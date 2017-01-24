@@ -104,11 +104,12 @@ $(document).ready(function () {
     });
 
     // Minimalize menu
-    $('.navbar-minimalize').on('click', function () {
+    $('.navbar-minimalize').on('click', function (){
         $("body").toggleClass("mini-navbar");
         SmoothlyMenu();
-
     });
+
+
 
     // Tooltips demo
     $('.tooltip-demo').tooltip({
@@ -265,13 +266,13 @@ function SmoothlyMenu() {
         // For smoothly turn on menu
         setTimeout(
             function () {
-                $('#side-menu').fadeIn(400);
+                $('#side-menu').fadeIn(0);
             }, 200);
     } else if ($('body').hasClass('fixed-sidebar')) {
         $('#side-menu').hide();
         setTimeout(
             function () {
-                $('#side-menu').fadeIn(400);
+                $('#side-menu').fadeIn(0);
             }, 100);
     } else {
         // Remove all inline style from jquery fadeIn function to reset menu state
