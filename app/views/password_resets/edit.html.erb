@@ -35,38 +35,37 @@
     <div class="col-md-6">
       <div class="ibox-content">
         <div class="panel-heading">
-          <h2 class="text-center m-t-10"><strong> Sign In</strong> </h2>
+          <h2 class="text-center m-t-10"><strong>Password Reset</strong> </h2>
         </div>
 
-            <%= form_for(:session, url: login_path) do |f| %>
-              <div class="form-group ">
-                <%= f.email_field :email, :placeholder => 'Email', :class => 'form-control' %>
-              </div>
-              <div class="form-group ">
-                <%= f.password_field :password, :placeholder => 'Password', :class => 'form-control' %>
-              </div>
 
-                <div class="form-group m-t-30">
-                  <div class="col-sm-5">
-                    <div class="field">
-                      <%= check_box_tag :remember_me, 1, params[:remember_me] %>
-                      <small><%= label_tag :remember_me %></small>
-                    </div>
-                  </div>
-                  <div class="col-sm-7 text-right">
-                    <i class="fa fa-lock m-r-5"></i> <%= link_to "Forgotten password?", new_password_reset_path %>
-                  </div>
-                  <br>
+
+        <%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>
+
+            <% if @user.errors.any? %>
+                <div class="error_messages">
+                  <h2>Form is invalid</h2>
+                  <ul>
+                    <% for message in @user.errors.full_messages %>
+                        <li><%= message %></li>
+                    <% end %>
+                  </ul>
                 </div>
-
-                <%= f.submit "Log in", :class => "btn btn-primary block full-width m-b" %>
             <% end %>
 
-            <p class="text-muted text-center">
-              <small>Do not have an account?</small>
-            </p>
 
-             <%= link_to "Create an account", 'signup', :class => 'btn btn-sm btn-white btn-block' %> <br><br>
+            <div class="form-group ">
+              <%= f.password_field :password, :placeholder => 'New Password', :class => 'form-control' %>
+            </div>
+            <div class="form-group ">
+              <%= f.password_field :password_confirmation, :placeholder => 'Repeat Password', :class => 'form-control' %>
+            </div>
+
+            <%= f.submit "Update Password", :class => "btn btn-primary block full-width m-b" %>
+
+        <% end %>
+
+
 
       </div>
     </div>

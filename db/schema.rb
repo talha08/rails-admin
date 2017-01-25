@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170120215435) do
+ActiveRecord::Schema.define(version: 20170125130909) do
 
   create_table "cuisines", force: :cascade do |t|
     t.string   "region",     limit: 255
@@ -31,13 +31,16 @@ ActiveRecord::Schema.define(version: 20170120215435) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "first_name",      limit: 255
-    t.string   "last_name",       limit: 255
-    t.string   "email",           limit: 255
-    t.string   "password_digest", limit: 255
-    t.string   "role",            limit: 255
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.string   "first_name",             limit: 255
+    t.string   "last_name",              limit: 255
+    t.string   "email",                  limit: 255
+    t.string   "password_digest",        limit: 255
+    t.string   "role",                   limit: 255
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.string   "auth_token",             limit: 255
+    t.string   "password_reset_token",   limit: 255
+    t.datetime "password_reset_sent_at"
   end
 
 end
