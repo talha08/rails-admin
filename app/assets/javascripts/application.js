@@ -25,9 +25,12 @@ $(document).ready(function() {
 
 
     toastr.options = {
-        "closeButton": false,
+        "closeButton": true,
         "debug": false,
-        "positionClass": "toast-bottom-right",
+        "newestOnTop": false,
+        "progressBar": true,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
         "onclick": null,
         "showDuration": "300",
         "hideDuration": "1000",

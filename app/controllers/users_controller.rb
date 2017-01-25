@@ -1,4 +1,13 @@
 class UsersController < ApplicationController
+
+  #layout 'layout', :only => [:first_action, :second_action]
+  #layout 'second_layout', :only => [:third_action, :fourth_action]
+
+  # before_action :require_user, only: [:show, :edit, :update, :destroy]
+  # before_action :require_editor, only: [:show, :edit]
+  # before_action :require_admin, only: [:destroy]
+
+
   def new
     @user = User.new
   end
@@ -13,8 +22,8 @@ class UsersController < ApplicationController
     end
   end
 
-  private
 
+  private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
