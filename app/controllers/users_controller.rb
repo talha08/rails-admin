@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   # before_action :require_editor, only: [:show, :edit]
   # before_action :require_admin, only: [:destroy]
 
+  before_action :logged_user, only: [:new]
 
   def new
     @user = User.new

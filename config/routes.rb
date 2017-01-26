@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  #get 'password_resets/new'
+  get 'password_resets/new'
 
   root 'sessions#index'
   get 'signup' => 'users#new'
@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
 
   resources :users
-  resources :password_resets
+  resources :password_resets #through email
 end
