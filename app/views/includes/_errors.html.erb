@@ -1,0 +1,10 @@
+<% if session[:errors] %>
+    <p class="alert alert-warning">Ooops! Please correct the following:
+    <ul>
+      <% session[:errors].each do |msg| %>
+          <li><%= msg %></li>
+      <% end %>
+    </ul>
+    </p>
+    <% session[:errors] = nil %>
+<% end %>

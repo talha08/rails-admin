@@ -38,24 +38,31 @@
           <h2 class="text-center m-t-10"><strong>Sign Up</strong> </h2>
         </div>
         <%= form_for(:user, :url => {:controller => 'users', :action => 'create'}) do |f| %>
-                <div class="form-group ">
-                  <%= f.text_field :first_name, :placeholder => 'First Name', :class => 'form-control' %>
-                </div>
-                <div class="form-group ">
-                  <%= f.text_field :last_name, :placeholder => 'Last Name', :class => 'form-control' %>
-                </div>
-                <div class="form-group ">
-                  <%= f.text_field :email, :placeholder => 'Email', :class => 'form-control' %>
-                </div>
-                <div class="form-group ">
-                <%= f.password_field :password, :placeholder => 'Password' , :class => 'form-control' %>
-                </div>
-                <div class="form-group ">
-                   <%= f.password_field :password_confirmation ,:placeholder => 'Repeat Password' , :class => 'form-control'%>
-                </div>
 
-                  <%= f.submit "Sign up", :class => "btn btn-primary block full-width m-b" %>
+
+              <%= render partial: 'includes/errors' %>
+
+
+            <div class="form-group ">
+              <%= f.text_field :first_name, :placeholder => 'First Name', :class => 'form-control', :required =>'required' %>
+            </div>
+            <div class="form-group ">
+              <%= f.text_field :last_name, :placeholder => 'Last Name', :class => 'form-control', :required =>'required' %>
+            </div>
+            <div class="form-group ">
+              <%= f.text_field :email, :placeholder => 'Email', :class => 'form-control', :required =>'required' %>
+            </div>
+            <div class="form-group ">
+            <%= f.password_field :password, :placeholder => 'Password' , :class => 'form-control', :required =>'required' %>
+            </div>
+            <div class="form-group ">
+               <%= f.password_field :password_confirmation ,:placeholder => 'Repeat Password' , :class => 'form-control', :required =>'required'%>
+            </div>
+
+              <%= f.submit "Sign up", :class => "btn btn-primary block full-width m-b" %>
         <% end %>
+
+
 
         <div class="ibox-content">
           <h4 class="text-center"><b> OR</b></h4>
@@ -80,7 +87,7 @@
     </div>
   </div>
 
-  <%
+
 
 
   <hr/>
