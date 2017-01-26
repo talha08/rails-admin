@@ -1,0 +1,13 @@
+<% if session[:errors] %>
+    <p class="alert alert-info">Ooops! Please correct the following:
+    <ul  class="alert alert-warning">
+      <button class="close" data-dismiss="alert">×</button>
+      <% session[:errors].each do |msg| %>
+          <li><%= msg %></li>
+      <% end %>
+    </ul>
+    </p>
+    <% session[:errors] = nil %>
+<% end %>
+
+

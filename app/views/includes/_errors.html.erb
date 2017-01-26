@@ -1,10 +1,17 @@
-<% if session[:errors] %>
-    <p class="alert alert-info">Ooops! Please correct the following:
-    <ul  class="alert alert-warning">
-      <% session[:errors].each do |msg| %>
-           <li><%= msg %></li>
-      <% end %>
-    </ul>
-    </p>
-    <% session[:errors] = nil %>
+<% flash  do |type, message| %>
+    <script>
+      $(document).ready(function() {
+        setTimeout(function() {
+          toastr.options = {
+            closeButton: true,
+            progressBar: true,
+            showMethod: 'slideDown',
+            timeOut: 4000
+          };
+          toastr.error( "<%  message %>");
+
+        }, 1300);
+
+      });
+    </script>
 <% end %>

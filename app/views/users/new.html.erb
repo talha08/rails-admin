@@ -39,8 +39,9 @@
         </div>
         <%= form_for(:user, :url => {:controller => 'users', :action => 'create'}) do |f| %>
 
+              <%= render partial: 'includes/toastr' %>
+              <%= render partial: 'includes/flash' %>
 
-              <%= render partial: 'includes/errors' %>
 
 
             <div class="form-group ">

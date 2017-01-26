@@ -24,8 +24,8 @@ class UsersController < ApplicationController
         redirect_to root_url
       else
         session[:errors] = @user.errors.full_messages
-     # flash[:error] = "validation problem"
-      redirect_to signup_url
+        flash[:error] = @user.errors.full_messages.to_sentence
+        redirect_to signup_url
       end
 
   end
