@@ -1,8 +1,8 @@
 <% if session[:errors] %>
-    <p class="alert alert-warning">Ooops! Please correct the following:
-    <ul>
+    <p class="alert alert-info">Ooops! Please correct the following:
+    <ul  class="alert alert-warning">
       <% session[:errors].each do |msg| %>
-          <li><%= msg %></li>
+           <li><%= msg %></li>
       <% end %>
     </ul>
     </p>
